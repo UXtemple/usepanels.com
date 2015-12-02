@@ -1,1 +1,1 @@
-export Page from 'panels-pages/container';
+export Page from './component';

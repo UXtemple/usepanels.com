@@ -10,6 +10,8 @@
     "pacpan": ".bin/pacpan",
     "pacpan:watch": ".bin/pacpan-watch",
     "push": ".bin/push",
+    "start": ".bin/start",
+    "start:dev": ".bin/start-dev",
     "test": ".bin/test"
   },
   "repository": {
@@ -33,24 +35,27 @@
   "homepage": "https://github.com/UXtemple/usepanels.com#readme",
   "devDependencies": {
     "babel": "^5.8.23",
-    "babel-plugin-react-transform": "^1.1.1",
     "babelify": "^6.3.0",
     "browserify": "^11.1.0",
-    "browserify-hmr": "^0.3.0",
+    "envify": "^3.4.0",
     "exorcist": "^0.4.0",
-    "react": "^0.13.3",
-    "react-transform-catch-errors": "^1.0.0",
-    "react-transform-hmr": "^1.0.1",
-    "redbox-react": "^1.1.1",
+    "nodemon": "^1.8.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
     "uglify-js": "^2.4.24",
     "watchify": "^3.4.0"
   },
   "dependencies": {
-    "browser-vendor-prefix": "^1.0.0",
-    "panels-pages": "^0.1.0",
+    "panels": "^1.1.5",
+    "panels-pages": "^1.0.0",
     "panels-ui": "^0.6.0",
+    "pouchdb": "^5.1.0",
+    "react-redux": "^4.0.0",
+    "recompose": "^0.11.2",
     "redux": "^3.0.0",
     "redux-logger": "^1.0.8",
+    "redux-pouch": "^1.0.3",
+    "redux-promise": "^0.5.0",
     "redux-thunk": "^1.0.0"
   }
 }

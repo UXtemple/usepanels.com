@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+.bin/server-dev & .bin/pacpan-watch

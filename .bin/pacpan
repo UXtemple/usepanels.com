@@ -9,23 +9,26 @@ echo "[pacpan] packaging panels app ${APP} at '${SRC}'..."
 
 mkdir -p ./public
 
-$BIN/browserify --debug --verbose \
+NODE_ENV=production $BIN/browserify --debug --verbose \
   --external panels-ui \
   --external react \
   --external react-redux \
   --external redux \
   --external redux-logger \
+  --external redux-promise \
   --external redux-thunk \
   --ignore **/node_modules/**,**/__tests__/** \
   --require $SRC/index:$APP \
   --extension .es6 \
-  --transform babelify | \
+  --transform babelify \
+  --transform envify | \
   $BIN/exorcist $DST.js.map > $DST.js &&
   $BIN/uglifyjs --verbose \
     --compress \
     --mangle \
     --screw-ie8 \
     --in-source-map $DST.js.map \
+    --source-map-url $APP.min.js.map \
     --source-map $DST.min.js.map $DST.js > $DST.min.js
 
 echo "[pacpan] done"

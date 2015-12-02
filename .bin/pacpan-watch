@@ -15,10 +15,14 @@ $BIN/watchify --debug --verbose \
   --external react-redux \
   --external redux \
   --external redux-logger \
+  --external redux-promise \
   --external redux-thunk \
   --ignore **/node_modules/**,**/__tests__/** \
   --require $SRC/index:$APP \
   --extension .es6 \
-  --plugin browserify-hmr \
   --transform babelify \
+  --transform envify \
   --outfile $DST.dev.js
+
+
+  # --plugin browserify-hmr \

@@ -1,15 +1,20 @@
 import { applyMiddleware, createStore } from 'redux';
 import createLogger from 'redux-logger';
-import thunkMiddleware from 'redux-thunk';
+import pouchMiddleware from 'redux-pouch';
+import promiseMiddleware from 'redux-promise';
 import rootReducer from './reducers';
+import thunkMiddleware from 'redux-thunk';
 
 const loggerMiddleware = createLogger({
+  collapsed: true,
   level: 'info',
-  collapsed: true
+  logger: console
 });
 
 const createStoreWithMiddleware = applyMiddleware(
   thunkMiddleware,
+  promiseMiddleware,
+  pouchMiddleware,
   loggerMiddleware
 )(createStore);
 

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+BIN=node_modules/.bin
+
+# rm node_modules/async.today
+# NODE_ENV=production .bin/build
+# npm link ./
+sudo NODE_ENV=production \
+  CRT=$1 \
+  KEY=$2 \
+  $BIN/babel-node server.es6

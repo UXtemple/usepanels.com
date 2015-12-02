@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+BIN=node_modules/.bin
+
+sudo NODE_ENV=development \
+  KEY=.dev-ssl/server.key \
+  CRT=.dev-ssl/server.crt \
+  $BIN/nodemon --ext js,es6 \
+  --watch . \
+  --exec $BIN/babel-node -- server.es6
